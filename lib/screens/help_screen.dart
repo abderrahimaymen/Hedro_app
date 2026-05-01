@@ -67,7 +67,7 @@ class _HelpScreenState extends State<HelpScreen> {
         darkBgColor: const Color(0xFF164E63),
       ),
       _HelpItem(
-        emoji: '💧',
+        emoji: '🌊',
         title: provider.t('h_flow_title'),
         short: provider.t('h_flow_short'),
         detail: provider.t('h_flow_detail'),
@@ -77,7 +77,7 @@ class _HelpScreenState extends State<HelpScreen> {
         darkBgColor: const Color(0xFF312E81),
       ),
       _HelpItem(
-        emoji: '🔧',
+        emoji: '⚡',
         title: provider.t('h_rough_title'),
         short: provider.t('h_rough_short'),
         detail: provider.t('h_rough_detail'),
@@ -90,7 +90,7 @@ class _HelpScreenState extends State<HelpScreen> {
 
     final resultItems = [
       (
-        emoji: '💨',
+        emoji: '🚀',
         title: provider.t('h_speed_title'),
         description: provider.t('h_speed_desc'),
         normal: provider.t('h_speed_normal'),
@@ -135,7 +135,6 @@ class _HelpScreenState extends State<HelpScreen> {
                   // ── Input fields section ───────────────────────────
                   _SectionLabel(
                     isDark: isDark,
-                    emoji: '📋',
                     text: provider.t('section_inputs'),
                   ),
                   const SizedBox(height: 12),
@@ -297,7 +296,6 @@ class _HelpScreenState extends State<HelpScreen> {
                   // ── Results section ────────────────────────────────
                   _SectionLabel(
                     isDark: isDark,
-                    emoji: '📊',
                     text: provider.t('section_results_help'),
                   ),
                   const SizedBox(height: 12),
@@ -400,7 +398,6 @@ class _HelpScreenState extends State<HelpScreen> {
                   // ── Flow status guide ──────────────────────────────
                   _SectionLabel(
                     isDark: isDark,
-                    emoji: '🚦',
                     text: provider.t('section_status_help'),
                   ),
                   const SizedBox(height: 12),
@@ -421,7 +418,6 @@ class _HelpScreenState extends State<HelpScreen> {
                     child: Column(
                       children: [
                         _StatusRow(
-                          emoji: '⬇️',
                           bgColor: isDark
                               ? const Color(0xFF78350F).withValues(alpha: 0.4)
                               : const Color(0xFFFEF3C7),
@@ -432,7 +428,6 @@ class _HelpScreenState extends State<HelpScreen> {
                         ),
                         const SizedBox(height: 8),
                         _StatusRow(
-                          emoji: '✅',
                           bgColor: isDark
                               ? const Color(0xFF064E3B).withValues(alpha: 0.4)
                               : const Color(0xFFD1FAE5),
@@ -443,7 +438,6 @@ class _HelpScreenState extends State<HelpScreen> {
                         ),
                         const SizedBox(height: 8),
                         _StatusRow(
-                          emoji: '⚠️',
                           bgColor: isDark
                               ? const Color(0xFF7F1D1D).withValues(alpha: 0.4)
                               : const Color(0xFFFEE2E2),
@@ -503,21 +497,14 @@ class _HelpScreenState extends State<HelpScreen> {
 
 // ── Section Label ─────────────────────────────────────────────────────
 class _SectionLabel extends StatelessWidget {
-  const _SectionLabel({
-    required this.isDark,
-    required this.emoji,
-    required this.text,
-  });
+  const _SectionLabel({required this.isDark, required this.text});
   final bool isDark;
-  final String emoji;
   final String text;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(emoji, style: const TextStyle(fontSize: 14)),
-        const SizedBox(width: 6),
         Text(
           text.toUpperCase(),
           style: TextStyle(
@@ -535,14 +522,12 @@ class _SectionLabel extends StatelessWidget {
 // ── Status Row ────────────────────────────────────────────────────────
 class _StatusRow extends StatelessWidget {
   const _StatusRow({
-    required this.emoji,
     required this.bgColor,
     required this.textColor,
     required this.label,
     required this.desc,
     required this.textMuted,
   });
-  final String emoji;
   final Color bgColor;
   final Color textColor;
   final String label;
@@ -559,8 +544,6 @@ class _StatusRow extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Text(emoji, style: const TextStyle(fontSize: 20)),
-          const SizedBox(width: 10),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

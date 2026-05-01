@@ -33,7 +33,7 @@ class WaterFlowApp extends StatelessWidget {
     final locale = provider.locale;
 
     return MaterialApp(
-      title: 'Water Flow Calculator',
+      title: 'water flow',
       debugShowCheckedModeBanner: false,
       // ── Locale / RTL ───────────────────────────────────────────────
       locale: Locale(locale),

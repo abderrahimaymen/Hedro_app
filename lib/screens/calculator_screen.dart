@@ -130,32 +130,16 @@ class _CalculatorScreenState extends State<CalculatorScreen>
                     title: provider.t('home_title'),
                     subtitle: provider.t('home_subtitle'),
                     emoji: '💧',
-                  ),
-                  // Dark mode toggle
-                  PositionedDirectional(
-                    top: 16,
-                    end: 16,
-                    child: GestureDetector(
-                      onTap: provider.toggleTheme,
-                      child: Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Icon(
-                          isDark ? Icons.light_mode : Icons.dark_mode,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                      ),
-                    ),
+                    trailingIcon: isDark
+                        ? Icons.light_mode_rounded
+                        : Icons.dark_mode_rounded,
+                    onTrailingTap: provider.toggleTheme,
                   ),
                   // Language Selector
                   PositionedDirectional(
-                    top: 16,
-                    end: 64,
+                    top: 28,
+                    end:
+                        80, // Moved to make space for the trailing icon mode button
                     child: Container(
                       height: 40,
                       decoration: BoxDecoration(
